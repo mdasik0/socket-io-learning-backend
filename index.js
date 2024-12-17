@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors'); // Import CORS middleware
-
 const http = require('http');
 const { Server } = require('socket.io'); // Import Socket.IO properly
 const app = express();
@@ -29,6 +28,7 @@ io.on('connection', (socket) => {
   socket.on('register', (userId) => {
     users[userId] = socket.id;
     console.log(`User registered: ${userId}, Socket: ${socket.id}`);
+    // now let's build this as 
   });
 
   // Handle private messages
